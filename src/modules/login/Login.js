@@ -6,7 +6,6 @@ module.exports = {
   data() {
     return {
       codeUrl: '',
-      disabled: false,
       imgCodeShowFlag: false,
       typeFlag: '',
       data: {
@@ -22,14 +21,11 @@ module.exports = {
     }
   },
   methods: {
-    //获取验证码
-
     onSend(val){
+      //用户点击获取验证码，需要先输入图片验证码的时候，触发此事件
       this.imgCodeShowFlag = true
-      if(val.imgcode_url){
         this.requestId = uuid.v1().replace(/-/g, '')
         this.codeUrl = `/ziwork/captcha?requestId=${this.requestId}`
-      }
     },
     
   },
