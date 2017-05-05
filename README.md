@@ -1,19 +1,21 @@
 # VUE-TimesCount-Down_demo
 vue短信验证码倒计时组件
 
-##第一步
-##VUE2.0组件之间通信的解释
-vue2.0
-父传子：Props
-子传父：子：$emit(eventName) 父$on(eventName)
-父访问子：ref
-非父子组件通信:https://vuefe.cn/guide/components.html#非父子组件通信
-vue2.0 移除：1.$dispatch() 2.$broadcast() 3.events
-
-##第二步
-###父组件正确引用姿势
+## 第一步
+## VUE2.0组件之间通信的解释
 /**
- * 点击添加备注
+ * vue2.0
+ * 父传子：Props
+ * 子传父：子：$emit(eventName) 父$on(eventName)
+ * 父访问子：ref
+ * vue2.0 移除：1.$dispatch() 2.$broadcast() 3.events
+ */
+
+
+## 第二步
+### 父组件正确引用姿势
+/**
+ * 备注
  * @param  {data} 需要传给子组件的数据
  * @param  {second} 倒计时设定的数字
  * @param  {send} 子组件$emit()触发，父组件监听
@@ -21,7 +23,7 @@ vue2.0 移除：1.$dispatch() 2.$broadcast() 3.events
 ```html
 <timer-btn ref="timerBtn" :data="data" :second="60" @send="onSend"></timer-btn>
 ```
-###用户点击获取验证码，需要先输入图片验证码的时候，触发此事件
+### 用户点击获取验证码，需要先输入图片验证码的时候，触发此事件
 ```javascript
     onSend(val){
       this.imgCodeShowFlag = true//开启图片验证码dom显示
@@ -31,8 +33,8 @@ vue2.0 移除：1.$dispatch() 2.$broadcast() 3.events
     },
 ```
 
-##第三步
-###子组件解读
+## 第三步
+### 子组件解读
 体验异步的终极解决方案-ES7的Async/Await
 ```javascript
 async runs () {
