@@ -35,7 +35,11 @@ module.exports = {
           this.timeFlag = true
           this.timer()
         } catch (e) {
+          //当用户获取了三次短信验证码之后
+            // 再次点击了获取短信验证码，返回{{status_code:201}}我们会要求用户先填写图片验证码
+              //这里我们要emit一个事件，触发父组件图片验证码启动
           this.$message.error(e.msg)
+
           this.$emit('send', e)
         }
       }
