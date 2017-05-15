@@ -12,7 +12,7 @@ module.exports = {
       data: {
         username: '',
         code: '',
-        captcha: ''
+        captcha: '',
       },
     }
   },
